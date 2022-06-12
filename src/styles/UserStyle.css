@@ -1,0 +1,21 @@
+.userContainer {
+	height: 50;
+	width: 300px;
+	padding: 0.5rem;
+	margin: auto;
+	border-radius: 12px;
+}
+.userName {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+.phoneNumber {
+	flex-direction: row;
+	justify-content: flex-start;
+	display: flex;
+}
+
+.lable {
+	font-weight: bold;
+}
