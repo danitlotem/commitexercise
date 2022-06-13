@@ -1,21 +1,25 @@
 .userContainer {
-	height: 50;
-	width: 300px;
-	padding: 0.5rem;
-	margin: auto;
-	border-radius: 12px;
+	max-width: 350px;
+    margin: 10px auto;
+    background-color: #b3e5d1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
 }
-.userName {
+.line {
 	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-}
-.phoneNumber {
-	flex-direction: row;
-	justify-content: flex-start;
-	display: flex;
+	
 }
 
 .lable {
+	color: #286f6d;
 	font-weight: bold;
+	width: 150px;    
+	padding: 10px;
 }
+.data {
+	width: 150px;    
+	padding: 10px;
+}
+

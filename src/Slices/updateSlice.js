@@ -1,16 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
+import Promise from "promise";
 const initialState = {
   name: "",
   phone: "",
 };
 
 export const getUpdater = createAsyncThunk("updater", async () => {
-  const res = await axios
-    .get("http://example.com/movies.json")
-    .then((res) => res.json());
-  return res;
+  // eslint-disable-next-line no-undef
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return "simulatedAsyncAwait";
 });
 
 export const updateSlice = createSlice({

@@ -1,16 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-//import "../styles/FormStyle.css";
-import {
-  clear,
-  updateDetails,
-  getUpdater,
-  // setMessage,
-} from "../Slices/updateSlice";
-import Styles from "../styles/exampleStyle";
+import { clear, updateDetails, getUpdater } from "../Slices/updateSlice";
+import Styles from "../styles/DetailsFormStyle";
 import { Form, Field } from "react-final-form";
 
-const example = () => {
+const DetailsForm = () => {
   const dispatch = useDispatch();
 
   const required = (value) => (value ? undefined : "*Required");
@@ -25,7 +19,7 @@ const example = () => {
     var reg =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{6,12}$/;
     if (reg.test(value) === false) {
-      return "not valid password";
+      return "invalid password";
     }
     return undefined;
   };
@@ -42,18 +36,14 @@ const example = () => {
   }, []);
 
   const onSubmit = async (values) => {
-    // eslint-disable-next-line no-undef
-    console.log("On Submit");
     dispatch(getUpdater(values)).then(() => {
       dispatch(
         updateDetails({
           name: values.userName,
           phone: values.phoneNumber,
-          status: "updated",
         })
       );
     });
-    //}
   };
 
   return (
@@ -64,7 +54,7 @@ const example = () => {
           const errors = {};
 
           if (values.ConfirmPassword !== values.Password) {
-            errors.ConfirmPassword = "Must match";
+            errors.ConfirmPassword = "different passwords";
           }
           return errors;
         }}
@@ -148,5 +138,4 @@ const example = () => {
     </Styles>
   );
 };
-
-export default example;
+export default DetailsForm;
